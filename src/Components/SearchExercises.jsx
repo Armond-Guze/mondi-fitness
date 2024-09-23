@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { exersiseOptions, fetchData } from "../utils/fetchData";
 
 const SearchExercises = () => {
-  const [search, setSearch] = useState('') 
+  const [search, setSearch] = useState("");
 
- const handleSearch = async () => {
-  if(search) {
-    // const exercisesData = await fetchData()
-  }
- }
+  const handleSearch = async () => {
+    if (search) {
+      try {
+        const exercisesData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises/bodyPartList", // Corrected URL
+          exersiseOptions
+        );
+        console.log(exercisesData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+  };
 
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
