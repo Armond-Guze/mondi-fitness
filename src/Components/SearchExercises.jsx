@@ -9,9 +9,12 @@ const SearchExercises = () => {
     if (search) {
       try {
         const exercisesData = await fetchData(
-          "https://exercisedb.p.rapidapi.com/exercises/bodyPartList", // Corrected URL
-          exersiseOptions
-        );
+          "https://exercisedb.p.rapidapi.com/exercises", // Corrected URL
+          exersiseOptions);
+
+          const searchedExercises = exerciseData.filter(
+            (exercise) => exercise.name.toLowerCase().includes(search)
+          )
         console.log(exercisesData);
       } catch (error) {
         console.error("Error fetching data:", error);
