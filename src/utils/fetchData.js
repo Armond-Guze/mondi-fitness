@@ -1,4 +1,4 @@
-export const exersiseOptions = {
+export const exerciseOptions = {
     method: "GET",
     headers: {
       "x-rapidapi-key": import.meta.env.VITE_API_KEY, // Use VITE-prefixed environment variable
