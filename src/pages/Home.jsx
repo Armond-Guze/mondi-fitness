@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-import { Box } from "@mui/material";
-import HeroBanner from "../Components/Hero";
-import SearchExercises from "../Components/SearchExercises";
-import Exersices from "../Components/Exersices";
+import React, { useState } from 'react';
+import { Box } from '@mui/material';
+
+import Exercises from '../components/Exercises';
+import SearchExercises from '../components/SearchExercises';  // Corrected to lowercase 'c'
+import HeroBanner from '../components/Hero';
 
 const Home = () => {
+  const [exercises, setExercises] = useState([]);
+  const [bodyPart, setBodyPart] = useState('all');
+
   return (
     <Box>
       <HeroBanner />
-      <SearchExercises />
-      <Exersices />
+      <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+      <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
     </Box>
   );
 };

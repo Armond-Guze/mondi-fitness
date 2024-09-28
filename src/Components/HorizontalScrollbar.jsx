@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { Box, Typography } from '@mui/material';
 
@@ -9,7 +10,6 @@ import LeftArrowIcon from '../assets/icons/left-arrow.png';
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
-
   return (
     <Typography onClick={() => scrollPrev()} className="right-arrow">
       <img src={LeftArrowIcon} alt="right-arrow" />
@@ -19,7 +19,6 @@ const LeftArrow = () => {
 
 const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
-
   return (
     <Typography onClick={() => scrollNext()} className="left-arrow">
       <img src={RightArrowIcon} alt="right-arrow" />
@@ -36,10 +35,17 @@ const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
         title={item.id || item}
         m="0 40px"
       >
-        {bodyParts ? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> : <ExerciseCard exercise={item} /> }
+        {bodyParts ? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> : <ExerciseCard exercise={item} />}
       </Box>
     ))}
   </ScrollMenu>
 );
+
+HorizontalScrollbar.propTypes = {
+  data: PropTypes.array.isRequired,
+  bodyParts: PropTypes.bool,
+  setBodyPart: PropTypes.func.isRequired,
+  bodyPart: PropTypes.string.isRequired
+};
 
 export default HorizontalScrollbar;

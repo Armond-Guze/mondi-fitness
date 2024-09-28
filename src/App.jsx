@@ -3,13 +3,13 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { Box } from "@mui/material";
 import "./app.css";
 
-import Navbar from "./Components/Navbar";
-import ExersiceDetail from "./pages/ExersizeDetail";
+import Navbar from "./components/Navbar";
+import ExersiceDetail from "./pages/ExcersiseDetail";
 import Home from "./pages/Home";
-import Footer from "./Components/Footer";
-import Exersices from "./Components/Exersices";
-import Hero from "./Components/Hero";
-import SearchExercises from "./Components/SearchExercises";
+import Footer from "./components/Footer";
+import Exersices from "./components/Exercises";
+import Hero from "./components/Hero";
+import SearchExercises from "./components/SearchExercises";
 
 const App = () => {
   return (
