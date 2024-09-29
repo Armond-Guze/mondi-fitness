@@ -5,7 +5,6 @@ import "./App.css";
 
 import ExersiceDetail from "./pages/ExcersiseDetail";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -15,7 +14,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/exercise/:id" element={<ExersiceDetail />} />
         </Routes>
-        <Footer />
       </Box>
     </Router>
   );
