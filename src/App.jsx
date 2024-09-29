@@ -7,9 +7,6 @@ import Navbar from "./components/Navbar";
 import ExersiceDetail from "./pages/ExcersiseDetail";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import Exercises from "./components/Exercises";
-import Hero from "./components/Hero";
-import SearchExercises from "./components/SearchExercises";
 
 const App = () => {
   return (
