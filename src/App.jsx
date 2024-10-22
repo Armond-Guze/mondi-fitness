@@ -14,6 +14,7 @@ const App = () => {
         {/* routes */}
       <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
         <Navbar />
+        {/* fg */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/exercise/:id" element={<ExersiceDetail />} />
